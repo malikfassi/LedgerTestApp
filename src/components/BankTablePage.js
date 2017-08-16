@@ -60,21 +60,15 @@ export default class BankTablePage extends Component {
       wallet.transactions = []; 
       wallet.balance = 0;
       txs.forEach(txinfo => {
-        let transaction = { },
-            spending = false,
-            fromAddr = null,
-            toAddr = null;
-            //PARSE DATA TO HANDLE IT EASILY
-        fromAddr = txinfo.inputs[0].address;
-        toAddr = txinfo.outputs[txinfo.outputs.length - 1].address;
-        spending = (fromAddr === walletAddress);
-        transaction.amount = txinfo.amount;
-        transaction.from = fromAddr;
-        transaction.to = toAddr;
+        let transaction = { }
+        //PARSE DATA TO HANDLE IT EASILY
+        transaction.amount = 0; 
+        txinfo.inputs.forEach((e) => {transaction.amount -= (e.address === walletAddress) ? e.value : 0})
+        txinfo.outputs.forEach((e) => {transaction.amount += (e.address === walletAddress) ? e.value : 0})
         transaction.hash = txinfo.hash;
         transaction.date = new Date(txinfo.received_at);
-        transaction.sending = spending;
-        wallet.balance += (spending ? -1 : 1) * transaction.amount;
+        console.log(transaction.amount)
+        wallet.balance += transaction.amount;
         wallet.transactions.push(transaction);
       })
       this.setState({ wallet: wallet, error: 0})

@@ -19,7 +19,7 @@ export default class DateElement extends Component {
     let weekdays = ['SUN','MON','TUD','WED','THU','FRI','SAT'];
     let day = weekdays[date.getDay()]; //THU
     let hour = date.toLocaleTimeString('en-US', { hour: 'numeric', hour12: true, minute: 'numeric' }) // 9:36
-    let dayMonth = date.getDate() + "/" + date.getMonth() + 1// 8/10
+    let dayMonth = date.getDate() + "/" + (date.getMonth() + 1)// 8/10
     if (date.toDateString() === today.toDateString()) {
       day = "TODAY" // TODAY
     }

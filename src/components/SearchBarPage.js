@@ -1,6 +1,5 @@
 // eslint-disable-next-line
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { Redirect } from 'react-router-dom';
 
 export default class SearchBarPage extends Component {
@@ -8,10 +7,6 @@ export default class SearchBarPage extends Component {
  /***
   *** Creates a landing page with input that redirects to /{inputValue}
   ***/
-  
-  static propTypes = {
-      setSort: PropTypes.func.isRequired
-  }
 
   constructor() {
     super();
@@ -21,7 +16,6 @@ export default class SearchBarPage extends Component {
     }
   }
   submitForm = (e) => {
-    console.log("submitting")
     e.preventDefault()
     if (this.state.inputField.trim() !== "") {
       this.setState({ fireRedirect: true })
