@@ -10,5 +10,5 @@ run to deploy a server on localhost:3000/
 
 ### `npm run start-electron`
 
-run to deploy a server on localhost:3000/ and run electron
+run to deploy a server on localhost:5000/ and run electron
 
