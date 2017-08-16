@@ -1,0 +1,200 @@
+$OpenSans : 'Open Sans', sans-serif;
+$Quicksand : 'Quicksand', sans-serif;
+$grey : #999;
+$blue : #72cbc1;
+$lightgrey : #f9f9f9;
+.title {
+	display: block;
+	font-family : $Quicksand;
+	padding: 40px;
+	div {
+		font-size: 35px;
+		font-weight: bolder;
+	}
+	span {
+		margin-top: 10px;
+		font-size: 20px;
+		color: $grey;
+		display: block;
+	}
+}
+.error {
+	padding: 40px;
+}
+.formWrap {
+	font-family: $OpenSans;
+	padding: 150px 40px;
+	width: 100%;
+	box-sizing: border-box;
+	input {
+		padding: 20px 0px;
+		font-size: 24px;
+		line-height: 24px;
+		font-family: $OpenSans;
+		color: black;
+		width: 100%;
+		float: middle;
+	}
+	#submitButton {
+		color: $blue;
+		font-size: 24px;
+		margin-top: 100px;
+		float:right;
+	}
+}
+
+#resultsHeader {
+	overflow: hidden;
+	font-family: $Quicksand;
+	padding: 40px;
+	position: relative;
+	#filterInput {
+		width: 50%;
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		border-bottom: 1px solid $grey;
+		input {
+			width: calc(100% - 42px);
+			font-size: 24px;
+			line-height: 24px;
+			padding: 0px 0px 24px 0px;
+			float: left;
+			border: none;
+		}
+		input:focus + i {
+			color: $blue;
+		}
+		i.fa-search {
+			font-size: 2em !important;
+			color: $grey;
+			float: left;
+   			margin-top: 5px;
+		}
+		i.fa-search.active {
+			color: $blue;
+		}
+	}
+	#myBalance {
+		float:left;
+		.balanceValue {
+			font-size: 24px;
+		}
+		.balanceLabel {
+			font-size: 20px;
+			color: $grey;
+		}
+	}
+}
+.active {
+			color: $blue;
+		}
+.highlight {
+	background-color: rgb(251, 245, 180);
+}
+#tableWrap {
+	tbody {
+	    display:block;
+	    overflow:auto;
+	    height: calc(100% - 237px);
+	}
+	thead, tbody tr {
+	    display:table;
+	    table-layout:fixed;/* even columns width , fix width of table too*/
+	    width: calc( 100% - 1em );
+	}
+	thead {
+	    width: calc( 100% - 1em )/* scrollbar is average 1em/16px width, remove it from thead width */
+	}
+	padding: 40px;
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		.sortButton {
+			padding: 20px 0px;
+			font-weight: bolder;
+			text-align: left;
+			width: 33%;
+		}
+		.sortButton:hover {
+			cursor: pointer;
+		}
+
+		.transactionRow {
+			padding: 20px 0px;
+			border-bottom: 1px solid $grey;
+			overflow: hidden;
+			span {
+				text-overflow: ellipsis;
+			}
+		}
+		.dateElement {
+			color: $grey;
+			font-weight: bolder;
+		}
+	}
+}
+
+.alignRight {
+	text-align: right !important;
+}
+.bold {
+	font-weight: bold;
+}
+.show {
+	display: block;
+}
+.hide {
+	display: none;
+}
+
+#loading {
+	display:block;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	overflow: auto;
+	margin: auto;
+	position: absolute;
+	top: 0; left: 0; bottom: 0; right: 0;
+}
+#homeButton {
+	font-size: 24px;
+	color: $grey;
+	font-family: $OpenSans;
+	float: right;
+}
+
+#searchBarLabel {
+	display: block;
+	font-weight: bolder;
+}
+
+body {
+  font-family: $OpenSans;
+  background-color: $lightgrey;
+}
+
+input:focus{
+    outline: none;
+}
+
+
+button, input {
+	border: none;
+	background-color: $lightgrey;
+}
+input {
+	border:none;
+	border-bottom: 1px solid $grey;
+}
+button:focus {
+	outline: none;
+}
+
+button:hover {
+	cursor: pointer;
+}
+button.disabled:hover {
+	cursor: not-allowed !important;
+}
