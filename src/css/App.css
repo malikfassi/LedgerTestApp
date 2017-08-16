@@ -78,8 +78,7 @@
   padding: 40px; }
   #tableWrap tbody {
     display: block;
-    overflow: auto;
-    height: calc(100% - 237px); }
+    overflow: auto; }
   #tableWrap thead, #tableWrap tbody tr {
     display: table;
     table-layout: fixed;
